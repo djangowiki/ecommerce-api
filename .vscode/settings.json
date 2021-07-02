@@ -1,0 +1,30 @@
+{
+    "window.zoomLevel": 0.5,
+    // "files.autoSave": "afterDelay",
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "prettier.jsxSingleQuote": true,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/production-server": true,
+      "**/lambda/src/api": true,
+      // "**/.next": true,
+      "**/.coverage": true
+    },
+    "editor.formatOnSave": true,
+    "eslint.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  }
+  
