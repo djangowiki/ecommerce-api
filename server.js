@@ -22,6 +22,7 @@ const errorHandler = require('./middlewares/error');
 connectDB();
 
 // Middlewares.
+app.use(express.json());
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(hpp());
