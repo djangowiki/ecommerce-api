@@ -15,8 +15,11 @@ dotenv.config({ path: './config/env.env' });
 // Custom Modules.
 const connectDB = require('./config/db');
 const limiter = require('./middlewares/limitRequests');
-const auth = require('./routes/auth');
 const errorHandler = require('./middlewares/error');
+
+// Routes.
+const auth = require('./routes/auth');
+const admin = require('./routes/admin');
 
 // Database Connection.
 connectDB();
@@ -34,6 +37,7 @@ if ((process.env.NODE_ENV = 'development')) {
 // Custom Middlewares
 // Routes.
 app.use('/api/v1/auth', auth);
+app.use('/api/v1/admin', admin);
 app.use(limiter);
 app.use(errorHandler);
 
