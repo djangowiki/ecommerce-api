@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const slugify = require('slugify');
 
 const ProductSchema = mongoose.Schema(
   {
     title: {
       type: String,
       required: true,
+      unique: true,
       maxlength: 100,
     },
     slug: String,
@@ -32,6 +32,7 @@ const ProductSchema = mongoose.Schema(
     category: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'category',
+      required: true,
     },
     reviews: {
       type: mongoose.Schema.Types.ObjectId,
@@ -40,11 +41,5 @@ const ProductSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
-
-// Mongo Hook for Product Slug.
-ProductSchema.pre('save', (next) => {
-  this.slug = slugify(this.title, { lower: true });
-  next();
-});
 
 module.exports = mongoose.model('products', ProductSchema);
